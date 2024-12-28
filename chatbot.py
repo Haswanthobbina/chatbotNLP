@@ -12,8 +12,7 @@ nltk.data.path.append(os.path.abspath("nltk_data"))
 nltk.download('punkt')
 
 # Intents for the chatbot
-
-           intents = [
+intents = [
     {
         "tag": "greeting",
         "patterns": [
