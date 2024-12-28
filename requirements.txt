@@ -1,4 +1,4 @@
-nltk
-streamlit
-scikit-learn
-ssl
+pip install nltk
+pip install streamlit
+pip install scikit-learn
+pip install ssl
