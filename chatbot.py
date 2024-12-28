@@ -3398,8 +3398,8 @@ def main():
 
 
     if choice == "Home":
-        st.write("Hello! welcome namastey vanakkam , HASWANTH fells bored ask something to his BOT by pressing Enter!")
-        st.write("                                                                                                                                    ")
+        st.write("Hello! welcome namastey ,HASWANTH fells bored ask something to his BOT in below comment box! ")
+        st.write("  Firstly let me know how're you feeling today ")
         st.write("                                                                                                                                    ")
         st.write("                                                                                                                                    ")
         st.write("                                                                                                                                    ")
