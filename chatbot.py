@@ -1,4 +1,5 @@
 import os
+pip install nltk
 import nltk
 import ssl
 import streamlit as st
