@@ -1,5 +1,6 @@
 import os
 import ssl
+import nltk
 import streamlit as st
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
