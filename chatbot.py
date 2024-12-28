@@ -1,5 +1,10 @@
-import os
 pip install nltk
+pip install os
+pip install ssl
+pip install streamlit
+
+
+import os
 import nltk
 import ssl
 import streamlit as st
