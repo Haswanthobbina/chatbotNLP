@@ -3471,36 +3471,3 @@ if __name__ == '__main__':
     main()
 import streamlit as st
 
-# Define your custom CSS
-custom_css = 
-    <style>.primary-color {
-            background-color: #4CAF50;
-        }
-        
-        
-        body {
-            background-color: #F5F5F5;
-        }
-
-       
-        .stText {
-            color: #333333;
-        }
-
-        
-        .secondary-bg {
-            background-color: #E3F2FD;
-        }
-    </style>
-
-# Inject the CSS into the app
-st.markdown(custom_css, unsafe_allow_html=True)
-
-# Example usage of custom classes
-st.markdown('<div class="primary-color">This is a primary color box</div>', unsafe_allow_html=True)
-st.markdown('<div class="secondary-bg">This is a secondary background box</div>', unsafe_allow_html=True)
-
-
-
-    
-    
