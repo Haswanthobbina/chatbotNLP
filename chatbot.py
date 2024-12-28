@@ -1,4 +1,3 @@
-pip install nltk
 pip install os
 pip install ssl
 pip install streamlit
