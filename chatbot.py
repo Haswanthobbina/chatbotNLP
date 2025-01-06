@@ -13,6 +13,401 @@ nltk.download('punkt')
 
 intents = [
     {
+      "tag": "greetings",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Hey",
+        "Good morning",
+        "Good evening"
+      ],
+      "responses": [
+        "Hello! How can I help you?",
+        "Hi there! How are you?",
+        "Hey! What’s up?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Take care",
+        "Catch you later"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later!",
+        "Take care! Bye!"
+      ]
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": [
+        "How are you?",
+        "How are you doing?",
+        "What’s up?",
+        "How’s it going?"
+      ],
+      "responses": [
+        "I’m doing great, thank you! How about you?",
+        "I’m fine, thank you! What about you?",
+        "I’m doing well. How are you?"
+      ]
+    },
+    {
+      "tag": "feeling",
+      "patterns": [
+        "I’m feeling good",
+        "I’m happy",
+        "I’m sad",
+        "I feel tired",
+        "I’m excited"
+      ],
+      "responses": [
+        "That’s great to hear!",
+        "I’m here if you need to talk.",
+        "Take some rest if you’re tired.",
+        "I’m happy for you!"
+      ]
+    },
+    {
+      "tag": "name",
+      "patterns": [
+        "What is your name?",
+        "Who are you?",
+        "Tell me your name",
+        "Introduce yourself"
+      ],
+      "responses": [
+        "I’m your virtual assistant.",
+        "My name is chatbot. What’s yours?",
+        "I’m chatbot, your friendly assistant."
+      ]
+    },
+    {
+      "tag": "thank_you",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "I appreciate it",
+        "Thanks a lot",
+        "Thank you so much"
+      ],
+      "responses": [
+        "You’re welcome!",
+        "No problem at all!",
+        "My pleasure!"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Can you help me?",
+        "I need assistance",
+        "I need help",
+        "Can you assist me?",
+        "Help me please"
+      ],
+      "responses": [
+        "Of course! What do you need help with?",
+        "I’m here to help. Please tell me what you need.",
+        "Sure, I’d be happy to assist you."
+      ]
+    },
+    {
+      "tag": "hobby",
+      "patterns": [
+        "What’s your hobby?",
+        "What do you like to do?",
+        "Do you have hobbies?",
+        "What do you enjoy?"
+      ],
+      "responses": [
+        "I love helping people and answering questions.",
+        "I enjoy learning new things to assist you better.",
+        "My hobby is making your day easier!"
+      ]
+    },
+    {
+      "tag": "age",
+      "patterns": [
+        "How old are you?",
+        "What’s your age?",
+        "Tell me your age",
+        "Are you young or old?"
+      ],
+      "responses": [
+        "I don’t age, but I’m always learning!",
+        "Age doesn’t apply to me, but I’m quite experienced.",
+        "I’m as old as the data I’ve been trained on."
+      ]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "How’s the weather?",
+        "What’s the weather like?",
+        "Is it raining?",
+        "Is it sunny today?"
+      ],
+      "responses": [
+        "I’m not sure about the current weather, but you can check your local forecast!",
+        "Weather changes quickly, so check a reliable weather app!",
+        "I’d recommend looking outside or using a weather service for the latest updates."
+      ]
+    },
+     {
+      "tag": "top_colleges_in_india",
+      "patterns": [
+        "What are the top engineering colleges in India?",
+        "List of the best engineering colleges in India",
+        "Which engineering colleges are ranked highest in India?",
+        "Top private engineering colleges in India",
+        "Best government engineering institutions in India"
+      ],
+      "responses": [
+        "The top engineering colleges in India include IITs, NITs, BITS Pilani, VIT Vellore, SRM Institute of Science and Technology, and Anna University."
+      ]
+    },
+    {
+      "tag": "admission_process_india",
+      "patterns": [
+        "How to get admission into engineering colleges in India?",
+        "What is the admission process for IITs and NITs?",
+        "How do private colleges in India conduct admissions?",
+        "What are the entrance exams for engineering in India?",
+        "Explain the engineering college admission process"
+      ],
+      "responses": [
+        "Admissions to engineering colleges in India are primarily based on entrance exams like JEE Main, JEE Advanced, state-level exams (e.g., MHT-CET, TNEA), and private exams like SRMJEE and VITEEE."
+      ]
+    },
+    {
+      "tag": "scholarships_for_students",
+      "patterns": [
+        "Are scholarships available for engineering students in India?",
+        "Which colleges offer scholarships for engineering?",
+        "How to apply for engineering scholarships?",
+        "Details about government scholarships for engineering",
+        "Scholarship options for financially weak students"
+      ],
+      "responses": [
+        "Many engineering colleges provide scholarships based on merit and financial need. Government scholarships like Pragati, Saksham, and private scholarships like Narotam Sekhsaria are also available."
+      ]
+    },
+    {
+      "tag": "college_infrastructure",
+      "patterns": [
+        "What facilities do top engineering colleges provide?",
+        "Do engineering colleges have Wi-Fi and libraries?",
+        "Details about hostels in engineering colleges",
+        "Sports facilities in engineering institutions",
+        "Campus infrastructure of IITs and NITs"
+      ],
+      "responses": [
+        "Top engineering colleges in India offer world-class facilities including libraries, hostels, Wi-Fi, sports complexes, laboratories, and research centers."
+      ]
+    },
+    {
+      "tag": "placements_in_colleges",
+      "patterns": [
+        "How are the placements in engineering colleges?",
+        "Placement records of IITs and NITs",
+        "Which colleges have the best placement rates?",
+        "Top recruiters in engineering colleges",
+        "Details about placement packages in India"
+      ],
+      "responses": [
+        "Colleges like IITs, NITs, and BITS Pilani have excellent placement records, with companies like Google, Microsoft, TCS, and Infosys offering high packages."
+      ]
+    },
+    {
+      "tag": "hostel_facilities",
+      "patterns": [
+        "Do engineering colleges have hostels?",
+        "Details about accommodation in IITs",
+        "Are hostels compulsory in NITs?",
+        "What are the hostel fees in private colleges?",
+        "Hostel facilities in top engineering colleges"
+      ],
+      "responses": [
+        "Most engineering colleges offer hostel facilities with amenities like Wi-Fi, mess services, and 24/7 security. Fees vary based on the institution."
+      ]
+    },
+    {
+      "tag": "engineering_branches",
+      "patterns": [
+        "What are the popular engineering branches in India?",
+        "Details about computer science engineering",
+        "Which colleges offer aerospace engineering?",
+        "Best branches for a career in engineering",
+        "What is the scope of civil engineering?"
+      ],
+      "responses": [
+        "Popular branches include Computer Science, Mechanical, Civil, Electrical, Electronics, Aerospace, and Chemical Engineering. Many colleges specialize in these fields."
+      ]
+    },
+    {
+      "tag": "fees_structure",
+      "patterns": [
+        "What is the fee structure for engineering colleges?",
+        "How much does it cost to study at IITs?",
+        "Fees for private engineering colleges in India",
+        "Are there affordable engineering colleges?",
+        "What are the tuition fees for NITs?"
+      ],
+      "responses": [
+        "Fees vary widely: IITs charge around INR 2-2.5 lakhs annually, while private colleges like VIT and SRM charge INR 2.5-4 lakhs. Scholarships and government colleges can reduce costs."
+      ]
+    },
+    {
+      "tag": "technical_fests",
+      "patterns": [
+        "Do engineering colleges host technical fests?",
+        "Details about cultural fests in IITs",
+        "What are some famous college festivals?",
+        "Are there hackathons in engineering colleges?",
+        "Technical events hosted by NITs"
+      ],
+      "responses": [
+        "Yes, most colleges host annual technical and cultural fests like IIT Bombay's Techfest, IIT Delhi's Rendezvous, and NIT Trichy’s Pragyan."
+      ]
+    },
+    {
+      "tag": "research_opportunities",
+      "patterns": [
+        "Do colleges support research activities?",
+        "What are the research facilities in IITs?",
+        "Are there research scholarships in engineering?",
+        "Which colleges focus on R&D?",
+        "Details about Ph.D. programs in engineering colleges"
+      ],
+      "responses": [
+        "Engineering colleges like IITs and IISc provide extensive research opportunities with access to state-of-the-art facilities, grants, and collaborations."
+      ]
+    },
+     {
+      "tag": "state_specific_queries",
+      "patterns": [
+        "What are the best engineering colleges in Tamil Nadu?",
+        "Top engineering colleges in Maharashtra",
+        "Best colleges for engineering in Andhra Pradesh",
+        "List of engineering colleges in Karnataka",
+        "Which are the leading engineering colleges in West Bengal?"
+      ],
+      "responses": [
+        "Some of the best engineering colleges in Tamil Nadu include IIT Madras, Anna University, and VIT Vellore.",
+        "Top engineering colleges in Maharashtra are IIT Bombay, COEP Pune, and VJTI Mumbai.",
+        "In Andhra Pradesh, popular engineering colleges are Andhra University, JNTU Kakinada, and KL University.",
+        "Karnataka’s leading engineering colleges include IISc Bangalore, RVCE, and PES University.",
+        "West Bengal is home to top engineering colleges like IIT Kharagpur, Jadavpur University, and IIEST Shibpur."
+      ]
+    },
+    {
+      "tag": "exam_specific_queries",
+      "patterns": [
+        "What is the syllabus for KCET?",
+        "Details about the TNEA counseling process",
+        "How can I apply for WBJEE?",
+        "What is the exam pattern of EAMCET?",
+        "Eligibility criteria for state-level engineering entrance exams"
+      ],
+      "responses": [
+        "The KCET syllabus includes topics from Physics, Chemistry, and Mathematics based on the Karnataka PUC syllabus.",
+        "TNEA counseling involves an online registration process followed by document verification and seat allocation.",
+        "You can apply for WBJEE through the official website by filling out the application form and submitting the required fees.",
+        "The EAMCET exam pattern consists of 160 questions divided among Physics, Chemistry, and Mathematics.",
+        "Eligibility for state-level entrance exams typically includes passing Class 12 with PCM subjects and meeting the state domicile requirements."
+      ]
+    },
+    {
+      "tag": "college_specific_queries",
+      "patterns": [
+        "What are the courses offered by IIT Delhi?",
+        "Placement statistics of VIT Vellore",
+        "Details about SRM University’s campus facilities",
+        "What is the fee structure of BITS Pilani?",
+        "Does Manipal University offer scholarships?"
+      ],
+      "responses": [
+        "IIT Delhi offers undergraduate, postgraduate, and doctoral programs in various engineering and science disciplines.",
+        "VIT Vellore has an excellent placement record, with top recruiters like Microsoft, TCS, and Wipro offering high packages.",
+        "SRM University provides modern campus facilities, including high-tech labs, libraries, hostels, and sports complexes.",
+        "BITS Pilani’s fee structure for undergraduate programs is approximately INR 4-5 lakhs per year.",
+        "Manipal University offers merit-based and need-based scholarships for deserving students."
+      ]
+    },
+    {
+      "tag": "student_life_facilities",
+      "patterns": [
+        "What extracurricular activities are available in engineering colleges?",
+        "Details about dining facilities in IITs",
+        "Is safety ensured in NIT campuses?",
+        "Student organizations in private engineering colleges",
+        "What are the sports facilities in government engineering colleges?"
+      ],
+      "responses": [
+        "Engineering colleges offer extracurricular activities like technical clubs, cultural events, hackathons, and fests.",
+        "IITs provide diverse dining facilities with multiple mess options catering to different cuisines.",
+        "Safety is a priority in NIT campuses, with 24/7 security and CCTV surveillance.",
+        "Private engineering colleges host various student organizations focusing on technical, cultural, and social activities.",
+        "Government engineering colleges have well-maintained sports complexes, including cricket grounds, basketball courts, and gymnasiums."
+      ]
+    },
+    {
+      "tag": "international_collaboration",
+      "patterns": [
+        "Do Indian engineering colleges have exchange programs?",
+        "What are the international internship opportunities for Indian students?",
+        "Which colleges have tie-ups with foreign universities?",
+        "Can I study abroad through an Indian engineering college?",
+        "Details about dual degree programs in engineering colleges"
+      ],
+      "responses": [
+        "Many colleges like IITs and BITS Pilani offer student exchange programs with universities abroad.",
+        "International internships are available through programs like DAAD, MITACS, and collaborations with global companies.",
+        "IITs, NITs, and private colleges like SRM and VIT have tie-ups with foreign universities for research and academic exchanges.",
+        "Indian engineering colleges provide study-abroad opportunities through MoUs with international institutions.",
+        "Dual degree programs in collaboration with foreign universities are offered by IITs and some private colleges."
+      ]
+    },
+    {
+      "tag": "specializations_in_engineering",
+      "patterns": [
+        "What is the scope of Artificial Intelligence in engineering?",
+        "Best colleges for Data Science specialization",
+        "Details about IoT courses in India",
+        "Which colleges offer Robotics programs?",
+        "Emerging engineering branches in India"
+      ],
+      "responses": [
+        "Artificial Intelligence is a growing field with applications in healthcare, finance, and automation. Many IITs and private colleges offer AI courses.",
+        "Top colleges for Data Science include IIT Bombay, IISc Bangalore, and private institutions like Manipal University.",
+        "IoT courses are available in colleges like VIT, SRM, and IIT Hyderabad, focusing on smart systems and automation.",
+        "Robotics programs are offered by IITs, NITs, and specialized institutions like IIITs, focusing on AI, control systems, and mechanics.",
+        "Emerging branches include AI, Data Science, Cybersecurity, and Environmental Engineering, with a promising future in India."
+      ]
+    },
+    {
+      "tag": "admission_guidance",
+      "patterns": [
+        "How to choose the best engineering college?",
+        "What should I consider when selecting an engineering branch?",
+        "Common mistakes during college admissions",
+        "Is counseling necessary for admissions?",
+        "Tips for engineering aspirants in India"
+      ],
+      "responses": [
+        "Consider factors like placement records, faculty, facilities, and location when choosing an engineering college.",
+        "Select an engineering branch based on your interests, future scope, and aptitude for the subject.",
+        "Common mistakes include overlooking college reviews, not researching branch scope, and missing deadlines.",
+        "Counseling can provide valuable guidance in selecting the right college and course.",
+        "Aspirants should focus on entrance exams, build strong fundamentals, and explore internship opportunities early on."
+      ]
+    },
+    {
       "tag": "about_sathyabama",
       "patterns": [
         "Tell me about Sathyabama University",
