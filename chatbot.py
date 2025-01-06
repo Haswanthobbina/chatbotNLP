@@ -3952,20 +3952,33 @@ intents = [
     }
 ]
 
-# Setting up the ML model
-vectorizer = TfidfVectorizer()
-clf = LogisticRegression(random_state=0, max_iter=10000)
 
-tags = []
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 patterns = []
+tags = []
+
 for intent in intents:
     for pattern in intent['patterns']:
         tags.append(intent['tag'])
         patterns.append(pattern)
 
-x = vectorizer.fit_transform(patterns)
-y = tags
-clf.fit(x, y)
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(patterns)  
+y = tags 
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=52)
+
+
+clf = SVC(kernel='linear', probability=True)
+clf.fit(X_train, y_train)
+
+
+y_pred = clf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy on Test Data: {accuracy:.2f}")
 
 def chatbot(input_text):
     input_text = vectorizer.transform([input_text])
@@ -3974,6 +3987,14 @@ def chatbot(input_text):
         if intent['tag'] == tag:
             response = random.choice(intent['responses'])
             return response
+
+
+user_input = "types of colours"
+response = chatbot(user_input)
+print(response)
+
+# Setting up the ML model
+
 import csv
 import datetime
 import nltk
