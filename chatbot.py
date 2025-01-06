@@ -11,8 +11,202 @@ ssl._create_default_https_context = ssl._create_unverified_context
 nltk.data.path.append(os.path.abspath("nltk_data"))
 nltk.download('punkt')
 
-# Intents for the chatbot
 intents = [
+    {
+      "tag": "about_sathyabama",
+      "patterns": [
+        "Tell me about Sathyabama University",
+        "What is Sathyabama University famous for?",
+        "Can you provide details about Sathyabama University?",
+        "Overview of Sathyabama University",
+        "Introduction to Sathyabama University"
+      ],
+      "responses": [
+        "Sathyabama University is a premier institution located in Chennai, India, known for its excellence in engineering, science, and technology education."
+      ]
+    },
+    {
+      "tag": "admissions_sathyabama",
+      "patterns": [
+        "How can I get admission to Sathyabama University?",
+        "What are the admission criteria for Sathyabama?",
+        "Sathyabama University admission process",
+        "Eligibility for Sathyabama University",
+        "Steps to apply for Sathyabama University"
+      ],
+      "responses": [
+        "Admissions to Sathyabama University are based on the Sathyabama All India Entrance Examination (SAEEE). You can apply online through their official website."
+      ]
+    },
+    {
+      "tag": "courses_sathyabama",
+      "patterns": [
+        "What courses are offered at Sathyabama University?",
+        "List of programs at Sathyabama University",
+        "Which engineering branches are available in Sathyabama?",
+        "Does Sathyabama offer computer science engineering?",
+        "Available courses at Sathyabama"
+      ],
+      "responses": [
+        "Sathyabama University offers a wide range of undergraduate, postgraduate, and doctoral programs in engineering, technology, science, arts, and management."
+      ]
+    },
+    {
+      "tag": "fees_sathyabama",
+      "patterns": [
+        "What is the fee structure for Sathyabama University?",
+        "How much are the tuition fees at Sathyabama?",
+        "Sathyabama University fee details",
+        "Cost of studying at Sathyabama University",
+        "What are the hostel fees at Sathyabama?"
+      ],
+      "responses": [
+        "The fee structure for Sathyabama University varies by program. For undergraduate engineering courses, the annual tuition fee is approximately INR 2,00,000."
+      ]
+    },
+    {
+      "tag": "placements_sathyabama",
+      "patterns": [
+        "How are the placements at Sathyabama University?",
+        "Does Sathyabama have good campus placements?",
+        "What companies visit Sathyabama for placements?",
+        "Placement statistics of Sathyabama University",
+        "Average package at Sathyabama University"
+      ],
+      "responses": [
+        "Sathyabama University has an excellent placement record, with top recruiters like TCS, Infosys, Wipro, and Cognizant offering competitive packages."
+      ]
+    },
+    {
+      "tag": "ranking_sathyabama",
+      "patterns": [
+        "What is the NIRF ranking of Sathyabama University?",
+        "Where does Sathyabama stand in university rankings?",
+        "Sathyabama University ranking details",
+        "Is Sathyabama University among the top engineering colleges in India?",
+        "Global ranking of Sathyabama University"
+      ],
+      "responses": [
+        "Sathyabama University is consistently ranked among the top 50 engineering institutions in India by NIRF."
+      ]
+    },
+    {
+      "tag": "hostel_sathyabama",
+      "patterns": [
+        "Are there hostels at Sathyabama University?",
+        "What are the hostel facilities at Sathyabama?",
+        "Details about accommodation at Sathyabama University",
+        "Do Sathyabama hostels have Wi-Fi?",
+        "Is hostel mandatory at Sathyabama?"
+      ],
+      "responses": [
+        "Sathyabama University provides excellent hostel facilities with amenities like Wi-Fi, mess, laundry, and 24/7 security."
+      ]
+    },
+    {
+      "tag": "engineering_colleges_india",
+      "patterns": [
+        "Which are the top engineering colleges in India?",
+        "Best private engineering colleges in India",
+        "Top 10 government engineering colleges in India",
+        "List of IITs and NITs in India",
+        "Which colleges are best for computer science engineering?"
+      ],
+      "responses": [
+        "Some of the top engineering colleges in India include IITs, NITs, BITS Pilani, VIT, and SRM University."
+      ]
+    },
+    {
+      "tag": "admissions_engineering_india",
+      "patterns": [
+        "What is the admission process for engineering colleges in India?",
+        "How to apply for IITs and NITs?",
+        "Which exams are required for engineering admissions in India?",
+        "Details about JEE Main and JEE Advanced",
+        "How to get admission in private engineering colleges?"
+      ],
+      "responses": [
+        "Admissions to engineering colleges in India are primarily through entrance exams like JEE Main, JEE Advanced, and state-level exams like MHT-CET and TNEA."
+      ]
+    },
+    {
+      "tag": "scholarships_engineering_colleges",
+      "patterns": [
+        "Are there scholarships for engineering students in India?",
+        "How can I apply for scholarships in engineering colleges?",
+        "Which colleges offer scholarships for engineering?",
+        "Scholarship details for IITs and NITs",
+        "Financial aid options for engineering students"
+      ],
+      "responses": [
+        "Many engineering colleges in India, including IITs and NITs, offer merit-based and need-based scholarships. Government scholarships like Pragati and Saksham are also available."
+      ]
+    },
+    {
+      "tag": "library_sathyabama",
+      "patterns": [
+        "Does Sathyabama University have a library?",
+        "Details about the library facilities at Sathyabama",
+        "Is there a digital library at Sathyabama?",
+        "Library timings at Sathyabama University",
+        "How many books are available in Sathyabama's library?"
+      ],
+      "responses": [
+        "Sathyabama University has a state-of-the-art library with over 2,00,000 books, journals, and digital resources accessible to students."
+      ]
+    },
+    {
+      "tag": "transport_sathyabama",
+      "patterns": [
+        "Does Sathyabama provide transport facilities?",
+        "Transport services in Sathyabama University",
+        "Is there a bus service for Sathyabama students?",
+        "Details about transportation options at Sathyabama",
+        "How to commute to Sathyabama University?"
+      ],
+      "responses": [
+        "Sathyabama University offers transport services with a fleet of buses covering various parts of Chennai and nearby areas."
+      ]
+    },
+    {
+      "tag": "festivals_sathyabama",
+      "patterns": [
+        "What festivals are celebrated at Sathyabama University?",
+        "Does Sathyabama organize cultural events?",
+        "Details about fests at Sathyabama",
+        "Is there a technical fest at Sathyabama?",
+        "Annual cultural programs in Sathyabama University"
+      ],
+      "responses": [
+        "Sathyabama University hosts various cultural and technical festivals, including the annual cultural fest 'Sathyabama Fest' and technical symposiums."
+      ]
+    },
+    {
+      "tag": "research_sathyabama",
+      "patterns": [
+        "Does Sathyabama support research activities?",
+        "What are the research facilities at Sathyabama University?",
+        "Are there Ph.D. programs at Sathyabama?",
+        "Details about funded research projects at Sathyabama",
+        "Research opportunities in Sathyabama University"
+      ],
+      "responses": [
+        "Sathyabama University actively promotes research through funded projects, state-of-the-art labs, and collaborations with international institutions."
+      ]
+    },
+    {
+      "tag": "extracurricular_sathyabama",
+      "patterns": [
+        "Are there extracurricular activities at Sathyabama?",
+        "Clubs and societies in Sathyabama University",
+        "Details about sports facilities at Sathyabama",
+        "Does Sathyabama have cultural clubs?",
+        "Extracurricular options at Sathyabama University"
+      ],
+      "responses": [
+        "Sathyabama University offers a wide range of extracurricular activities, including sports, cultural clubs, technical societies, and more."
+      ]
+    },
     {
         "tag": "greeting",
         "patterns": [
